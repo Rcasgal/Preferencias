@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Juego">
+
+        <ListPreference
+            android:entries="@array/dificultades"
+            android:entryValues="@array/valores"
+            android:key="dificultad"
+            android:summary="Elige la dificultad del juego"
+            android:title="Dificultad elegida"
+            app:icon="@drawable/ic_up"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Tipo de BD">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_bd"
+            android:key="bd_externa"
+            android:summaryOff="Interna SQLite"
+            android:summaryOn="Externa MySQL, MariaDB"
+            android:title="Base de datos" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:dependency="bd_externa"
+        android:title="Servidor externo">
+        <EditTextPreference
+            android:defaultValue="miBD"
+            android:icon="@drawable/ic_lapiz"
+            android:key="nombre"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Nombre de la BD"
+            app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+            android:defaultValue="10.0.2.2"
+            android:icon="@drawable/ic_url"
+            android:key="ip"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="IP del servidor"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>

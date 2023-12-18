@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/it_group_preferencias">
+        <item
+            android:id="@+id/preferencias"
+            android:title="Preferencias"
+            app:showAsAction="never" />
+    </group>
+    <item
+        android:id="@+id/it_salir"
+        android:contentDescription="Salir de la aplicación"
+        android:title="Salir"
+        app:showAsAction="never" />
+</menu>
